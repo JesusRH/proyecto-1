@@ -29,13 +29,12 @@ export const routes: Routes = [
     path: 'mina',
     loadComponent: () => import('./pages/mina/mina.component'),
   },
-  {
+   {
     path: 'resgistro_unidades',
     loadComponent: () => import('./pages/registro-unidades/registro-unidades.component'),
 
   },
 
-  
   {
     path: '**',
     redirectTo: () => {

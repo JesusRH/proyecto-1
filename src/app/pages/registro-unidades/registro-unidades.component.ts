@@ -7,24 +7,35 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './registro-unidades.component.html',
-  styleUrls: ['./registro-unidades.component.css']
+  styleUrls: ['./registro-unidades.component.css'] // 👈 ojo: debe ser styleUrls (plural)
 })
-export default class RegistroUnidadesComponent {
+export  default class RegistroUnidadesComponent {
   unidadForm: FormGroup;
   folioActual = 101; // Ejemplo de folio
   posting = false;
 
   constructor(private fb: FormBuilder) {
     this.unidadForm = this.fb.group({
+      // Datos del Tracto
       modelo: ['', Validators.required],
       color: ['', Validators.required],
       placaTracto: ['', Validators.required],
-      operador: ['', Validators.required],
-      telefono: ['', Validators.required],
-      // Si luego quieres agregar góndolas y cantidad:
+
+      // Góndolas
       placaGondola1: [''],
       placaGondola2: [''],
-      cantidadM3: [0]
+
+      // Producto
+      mina: [''],
+      producto: [''],
+
+      // Operador
+      operador: ['', Validators.required],
+      telefono: ['', Validators.required],
+
+      // Carga
+      cantidadM3: [0, Validators.required],
+      observaciones: ['']
     });
   }
 

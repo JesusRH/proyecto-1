@@ -1,5 +1,4 @@
 <div class="min-h-screen bg-gray-100 p-6">
-
   <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
 
     <!-- Encabezado -->
@@ -20,38 +19,90 @@
           <span class="bg-blue-100 text-blue-700 p-2 rounded-full mr-3 text-sm font-bold">01</span>
           <h3 class="text-lg font-semibold text-gray-700 uppercase">Datos del Tractocamión</h3>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="flex flex-col">
             <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Modelo</label>
-            <input type="text" formControlName="modelo" class="w-full bg-gray-50 border border-gray-300 text-gray-700 rounded-lg p-2.5">
+            <input type="text" formControlName="modelo" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
           </div>
           <div class="flex flex-col">
             <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Color</label>
-            <input type="text" formControlName="color" class="w-full bg-gray-50 border border-gray-300 text-gray-700 rounded-lg p-2.5">
+            <input type="text" formControlName="color" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
           </div>
           <div class="flex flex-col">
             <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Placa del Tracto</label>
-            <input type="text" formControlName="placaTracto" class="w-full bg-gray-50 border border-gray-300 text-gray-800 font-bold rounded-lg p-2.5">
+            <input type="text" formControlName="placaTracto" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
           </div>
         </div>
       </section>
 
-      <!-- Sección Datos del Operador -->
+      <!-- Sección Góndolas -->
       <section>
         <div class="flex items-center border-b border-gray-200 pb-2 mb-4">
-          <span class="bg-green-100 text-green-700 p-2 rounded-full mr-3 text-sm font-bold">02</span>
+          <span class="bg-purple-100 text-purple-700 p-2 rounded-full mr-3 text-sm font-bold">02</span>
+          <h3 class="text-lg font-semibold text-gray-700 uppercase">Datos de Góndolas</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Placa Góndola 1</label>
+            <input type="text" formControlName="placaGondola1" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
+          </div>
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Placa Góndola 2</label>
+            <input type="text" formControlName="placaGondola2" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Producto -->
+      <section>
+        <div class="flex items-center border-b border-gray-200 pb-2 mb-4">
+          <span class="bg-yellow-100 text-yellow-700 p-2 rounded-full mr-3 text-sm font-bold">03</span>
+          <h3 class="text-lg font-semibold text-gray-700 uppercase">Datos del Producto</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Mina de Origen</label>
+            <input type="text" formControlName="mina" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
+          </div>
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Tipo de Producto</label>
+            <input type="text" formControlName="producto" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Operador -->
+      <section>
+        <div class="flex items-center border-b border-gray-200 pb-2 mb-4">
+          <span class="bg-green-100 text-green-700 p-2 rounded-full mr-3 text-sm font-bold">04</span>
           <h3 class="text-lg font-semibold text-gray-700 uppercase">Datos del Operador</h3>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="flex flex-col">
             <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Nombre Completo</label>
-            <input type="text" formControlName="operador" class="w-full bg-gray-50 border border-gray-300 text-gray-900 font-semibold rounded-lg p-2.5">
+            <input type="text" formControlName="operador" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
           </div>
           <div class="flex flex-col">
             <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Teléfono</label>
-            <input type="tel" formControlName="telefono" class="w-full bg-gray-50 border border-gray-300 text-gray-900 font-mono rounded-lg p-2.5">
+            <input type="tel" formControlName="telefono" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5">
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Carga -->
+      <section>
+        <div class="flex items-center border-b border-gray-200 pb-2 mb-4">
+          <span class="bg-red-100 text-red-700 p-2 rounded-full mr-3 text-sm font-bold">05</span>
+          <h3 class="text-lg font-semibold text-gray-700 uppercase">Información de Carga</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Cantidad en M³</label>
+            <input type="number" formControlName="cantidadM3" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5" placeholder="0.00">
+          </div>
+          <div class="flex flex-col">
+            <label class="text-xs font-semibold text-gray-500 mb-1 uppercase">Observaciones</label>
+            <textarea formControlName="observaciones" rows="2" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5"></textarea>
           </div>
         </div>
       </section>
