@@ -25,6 +25,10 @@ export const routes: Routes = [
     path: 'loggin',
     loadComponent: () => import('./pages/loggin/loggin'),
   },
+  {
+    path: 'mina',
+    loadComponent: () => import('./pages/mina/mina.component'),
+  },
 
   {
     path: '**',
