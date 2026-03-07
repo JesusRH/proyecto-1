@@ -34,6 +34,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/registro-unidades/registro-unidades.component'),
 
   },
+  {
+    path: 'usuario_receptor',
+    loadComponent: () => import('./pages/usuario-receptor/usuario-receptor.component'),
+  },
 
   {
     path: '**',
