@@ -7,12 +7,13 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './registro-unidades.component.html',
-  styleUrls: ['./registro-unidades.component.css'] // 👈 ojo: debe ser styleUrls (plural)
+  styleUrls: ['./registro-unidades.component.css'] // 👈 corregido: styleUrls (plural)
 })
-export  default class RegistroUnidadesComponent {
+export default class RegistroUnidadesComponent {
   unidadForm: FormGroup;
   folioActual = 101; // Ejemplo de folio
   posting = false;
+  mostrarModal = false; // 👈 nuevo: controla la ventana flotante
 
   constructor(private fb: FormBuilder) {
     this.unidadForm = this.fb.group({
@@ -31,10 +32,10 @@ export  default class RegistroUnidadesComponent {
 
       // Operador
       operador: ['', Validators.required],
-      telefono: ['', Validators.required],
+      telefono: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]], // 👈 validación de teléfono
 
       // Carga
-      cantidadM3: [0, Validators.required],
+      cantidadM3: [0, [Validators.required, Validators.min(1)]], // 👈 debe ser mayor a 0
       observaciones: ['']
     });
   }
@@ -47,8 +48,19 @@ export  default class RegistroUnidadesComponent {
     if (this.unidadForm.valid) {
       this.posting = true;
       console.log('Datos registrados:', this.unidadForm.value);
-      // Aquí puedes enviar los datos a tu backend con HttpClient
-      setTimeout(() => this.posting = false, 2000); // Simulación de espera
+
+      // Simulación de espera
+      setTimeout(() => {
+        this.posting = false;
+        this.mostrarModal = true; // 👈 mostrar modal al terminar
+      }, 2000);
+    } else {
+      // Si el formulario no es válido, marcar todos los campos como tocados
+      this.unidadForm.markAllAsTouched();
     }
+  }
+
+  cerrarModal() {
+    this.mostrarModal = false;
   }
 }
